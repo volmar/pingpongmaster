@@ -1,5 +1,19 @@
 <h1 class='page-header'>Leaderboard</h1>
 
 <div class="alert alert-warning" role="alert">This is a sample page.</div>
-
-<%= image_tag('leaderboard.png') %>
+<table class="table table-striped">
+    <thead>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Games Played</th>
+    </thead>
+    <% @board.each do |row| %>
+        <tr>
+        <td><%= row.id %></td>
+        <td><%= row.user %></td>
+        <td><%= row.score > 0 ? row.score : "X" %></td>
+        <td><%= row.games %></td>
+        </tr>
+    <% end %>
+</table>
