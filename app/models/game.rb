@@ -1,3 +1,4 @@
-class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :trackable, :validatable
+class game < ActiveRecord::Base
+    include ActiveModel::Validations
+    validates_with Valid
 end
